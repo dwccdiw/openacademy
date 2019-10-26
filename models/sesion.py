@@ -20,17 +20,18 @@ class sesion(models.Model):
 
     name = fields.Char (required=True, string="Nome da Sesión") #IMPORTANTE o campo ten que chamarse name
     data_sesion = fields.Date(string="Data da Sesión")
-    duracion = fields.Float(digits=(6, 2), string="Duración en horas")
+    duracion = fields.Float(digits=(6, 2), string="Duración en horas", default=2)
     asentos = fields.Integer(string="Número de asentos")
     instructor_id = fields.Many2one('res.partner',string="Docente")
+    permitido = fields.Boolean ('¿Permitido?', default=True)
     curso_id = fields.Many2one('openacademy.curso', ondelete='cascade', required=True,string="Título do Curso")
     # attendee_ids = fields.Many2many('res.partner',  string="Axudantes")
     axudantes_ids = fields.Many2many('res.partner', ondelete='set null',string="Axudantes" )
 
-    # @api.multi
-    # def button_check_duracion(self):
-    #     for sesion in self:
-    #         if duracion < 1 or duracion > 4:
-    #             raise Warning (
-    #                 'A duración da %s ten que ser entre 1 e 4 horas' % sesion.name)
-    #             return True
+    @api.multi
+    def button_check_duracion(self):
+        for sesion in self:
+            if duracion < 1 or duracion > 4:
+                raise Warning (
+                    'A duración da %s ten que ser entre 1 e 4 horas' % sesion.name)
+                return True
