@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="paperformat_euro_landscape"
+            model="report.paperformat">
+        <field name="name">European A4 Landscape</field>
+        <field name="default" eval="True" />
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">23</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report id="action_cursos_report"
+            string="Listaxe dos Cursos"
+            model="openacademy.curso" report_type="qweb-pdf"
+            name="openacademy.report_cursos_template"
+            paperformat="paperformat_euro_landscape"
+    />
+
+    <template id="report_cursos_template">
+        <!-- Para ver en formatato Web o informe
+        http://localhost:8069/report/html/openacademy.report_cursos_template/3
+        sendo 3 o parametro do curso-->
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+
+                    <!-- Report header content -->
+                    <div class="container">
+                        <div class="row bg-primary">
+                            <div class="col-3">Curso</div>
+                            <div class="col-3">A Descripción</div>
+                            <div class="col-3">O responsable</div>
+                            <!--            <div class="col-3">Publisher Address</div>-->
+                            <!--            <div class="col-2">Authors</div>-->
+                        </div>
+
+                        <!-- initialize variable -->
+                        <t t-set="contador_caracteres" t-value="0" />
+                        <t t-set="contador_rexistros" t-value="0" />
+
+                        <t t-foreach="docs" t-as="o">
+                            <div class="row">
+                                <div class="col-3">
+                                    <h4><span t-field="o.name" /></h4>
+
+                                    <!-- Running total: increment and present -->
+                                    <t t-set="contador_caracteres" t-value="contador_caracteres + len(o.name)" />
+                                    <t t-set="contador_rexistros" t-value="contador_rexistros + 1" />
+                                    <!--                    (Accum. authors: <t t-esc="author_count" />)-->
+
+                                </div>
+                                <div class="col-3">
+                                    <span t-field="o.descripcion" />
+                                </div>
+                                <div class="col-3">
+                                    <span t-field="o.responsable_id.partner_id.name" />
+                                    <!--                <span t-field="o.date_published"-->
+                                    <!--                        t-options="{'widget': 'date'}" />-->
+                                </div>
+                                <!--      <div class="col-3">
+                                      <div t-field="o.publisher_id"
+                                          t-options='{
+                                              "widget": "contact",
+                                              "fields": ["address", "email", "phone", "website"],
+                                              "no_marker": true}' />
+                                      </div>
+                                      <div class="col-2">
+                                          &lt;!&ndash; Render Authors &ndash;&gt;
+                                          <ul class="list-unstyled">
+                                          <t t-foreach="o.author_ids" t-as="author">
+                                            <li class="media">
+                                              <span t-field="author.image_small"
+                                                    t-options="{'widget': 'image'}" />
+                                              <div class="media-body">
+                                                <p class="mt-0">
+                                                  <span  t-field="author.name" />
+                                                </p>
+                                              </div>
+                                              <p/>
+                                            </li>
+                                          </t>
+                                          </ul>
+
+                                      </div>-->
+
+                            </div>
+                        </t>
+
+                        <!-- Report footer content ...-->
+                        <div class="row">
+                            <div class="col-3"> Número de cursos: <t t-esc="len(docs)" /></div>
+                            <!--     Price: <t t-esc="sum([x.price for x in docs])" />-->
+                            <div class="col-3"> Número de rexistros: <t t-esc="contador_rexistros" /></div>
+                            <div class="col-3"> Caracteres en nome cursos: <t t-esc="contador_caracteres" /></div>
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

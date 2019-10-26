@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="paperformat_euro_landscape"
+            model="report.paperformat">
+        <field name="name">European A4 Landscape</field>
+        <field name="default" eval="True" />
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">23</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report id="action_sesions_dos_cursos_report"
+            string="Listaxe das Sesións"
+            model="openacademy.sesion" report_type="qweb-pdf"
+            name="openacademy.report_sesion_template"
+            paperformat="paperformat_euro_landscape"
+    />
+
+    <template id="report_sesion_template">
+        <!-- Para ver en formatato Web o informe
+                http://localhost:8069/report/html/openacademy.report_sesion_template/2
+             sendo 2 o parametro da sesion-->
+
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+
+                    <!-- Report header content -->
+                    <div class="container">
+                        <div class="row bg-primary">
+                            <div class="col-2">Curso</div>
+                            <div class="col-2">Sesión</div>
+                            <div class="col-2">Docente</div>
+                            <div class="col-1">Duración</div>
+                            <div class="col-1">Asentos</div>
+                            <div class="col-2">Data</div>
+                            <div class="col-2">Axudantes</div>
+                        </div>
+                        <t t-set="contador_horas" t-value="0" />
+                        <t t-foreach="docs" t-as="o">
+                            <div class="row">
+                                <div class="col-2">
+                                    <h4><span t-field="o.curso_id.name" /></h4>
+                                </div>
+                                <div class="col-2">
+                                    <h5><span t-field="o.name" /></h5>
+                                </div>
+                                <div class="col-2">
+                                    <span t-field="o.instructor_id.name" />
+                                </div>
+                                <div class="col-1">
+                                    <span t-field="o.duracion" />
+                                    <t t-set="contador_horas" t-value="contador_horas + o.duracion" />
+                                </div>
+                                <div class="col-1">
+                                    <span t-field="o.asentos" />
+                                </div>
+                                <div class="col-2">
+                                    <span t-field="o.data_sesion"
+                                          t-options="{'widget': 'date'}" />
+                                </div>
+                                <div class="col-2"> irían os axudantes
+                                    <!-- <span t-field="o.axudantes_ids.name" />-->
+                                </div>
+                                <!--      <div class="col-3">
+                                      <div t-field="o.publisher_id"
+                                          t-options='{
+                                              "widget": "contact",
+                                              "fields": ["address", "email", "phone", "website"],
+                                              "no_marker": true}' />
+                                      </div>
+                                      <div class="col-2">
+                                          &lt;!&ndash; Render Authors &ndash;&gt;
+                                          <ul class="list-unstyled">
+                                          <t t-foreach="o.author_ids" t-as="author">
+                                            <li class="media">
+                                              <span t-field="author.image_small"
+                                                    t-options="{'widget': 'image'}" />
+                                              <div class="media-body">
+                                                <p class="mt-0">
+                                                  <span  t-field="author.name" />
+                                                </p>
+                                              </div>
+                                              <p/>
+                                            </li>
+                                          </t>
+                                          </ul>
+
+                                      </div>-->
+
+                            </div>
+                        </t>
+
+
+                        <div class="row">
+                            <div class="col-3">
+                                horas: <t t-esc="contador_horas" />
+                                <!-- Price: <t t-esc="sum([x.price for x in docs])" />-->
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>
