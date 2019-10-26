@@ -12,7 +12,7 @@
       'security/ir.model.access.csv',
       'views/cursos.xml',
       'views/sesions.xml',
-      'views/templates.xml', # Só a primeira vez
+  #    'views/templates.xml', # Só a primeira vez
       'reports/cursos_report.xml',
       'reports/sesions_dos_cursos_report.xml',
   ],
