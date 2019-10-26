@@ -20,7 +20,7 @@ class sesion(models.Model):
 
     name = fields.Char (required=True, string="Nome da Sesión") #IMPORTANTE o campo ten que chamarse name
     data_sesion = fields.Date(string="Data da Sesión")
-    duracion = fields.Float(digits=(6, 2), string="Duración en oras")
+    duracion = fields.Float(digits=(6, 2), string="Duración en horas")
     asentos = fields.Integer(string="Número de asentos")
     instructor_id = fields.Many2one('res.partner',string="Docente")
     curso_id = fields.Many2one('openacademy.curso', ondelete='cascade', required=True,string="Título do Curso")
