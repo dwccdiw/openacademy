@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="col-2">
                                     <span t-field="o.data_sesion"
-                                          t-options="{'widget': 'date'}" />
+                                          t-options="{'widget': 'datetime'}" />
                                 </div>
                                 <div class="col-2"> irían os axudantes
                                     <!-- <span t-field="o.axudantes_ids.name" />-->

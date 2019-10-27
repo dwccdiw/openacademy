@@ -22,54 +22,54 @@
 
 
         <!-- CARGA ESTOS VALORES NAS TABOAS openacademy.curso  openacademy.sesion-->
-       <record model="openacademy.curso" >
+       <record model="openacademy.curso" id="openacademy curso 1">
             <field name="name">Curso 1</field>
             <field name="descripcion">Descripción do Curso 1
                 Pode ter varias liñas
             </field>
            <field name="responsable_id">3</field>
         </record>
-        <record model="openacademy.curso" >
+        <record model="openacademy.curso" id="openacademy curso 2">
             <field name="name">Curso 2</field>
             <field name="descripcion">Descripción do Curso 2</field>
             <field name="responsable_id">3</field>
         </record>
-        <record model="openacademy.curso" >
+        <record model="openacademy.curso" id="openacademy curso 3">
             <field name="name">Curso 3</field>
             <field name="descripcion">Descripción do Curso 3</field>
             <field name="responsable_id">3</field>
         </record>
-        <record model="openacademy.sesion" >
+        <record model="openacademy.sesion" id="openacademy sesion 11">
             <field name="name">Primeira sesión</field>
             <field name="duracion">2.5</field>
-            <field name="data_sesion">10.25.2020</field><!-- Formato mm.dd.yyyy -->
+            <field name="data_sesion">10.25.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">1</field>
             <field name="axudantes_ids">3</field>    <!-- Falla -->
         </record>
-        <record model="openacademy.sesion" >
+        <record model="openacademy.sesion" id="openacademy sesion 12">
             <field name="name">Segunda sesión</field>
             <field name="duracion">3</field>
-            <field name="data_sesion">10.30.2020</field><!-- Formato mm.dd.yyyy -->
+            <field name="data_sesion">10.30.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">1</field>
             <field name="axudantes_ids">3</field>    <!-- Falla -->
           </record>
-        <record model="openacademy.sesion" >
+        <record model="openacademy.sesion" id="openacademy sesion 21">
             <field name="name">Primeira sesión</field>
             <field name="duracion">2.5</field>
-            <field name="data_sesion">10.25.2020</field><!-- Formato mm.dd.yyyy -->
+            <field name="data_sesion">10.25.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">2</field>
             <field name="axudantes_ids">3</field>    <!-- Falla -->
         </record>
-         <record model="openacademy.sesion" >
+         <record model="openacademy.sesion" id="openacademy sesion 22">
             <field name="name">Segunda sesión</field>
             <field name="duracion">3</field>
-            <field name="data_sesion">10.30.2020</field><!-- Formato mm.dd.yyyy -->
+            <field name="data_sesion">10.30.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">2</field>

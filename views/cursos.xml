@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-        <record model="ir.ui.view" id="curso_form_view">
-            <field name="name">curso.form</field>
-            <field name="model">openacademy.curso</field>
-            <field name="arch" type="xml">
-                <form string="Cursos da OpenAcademy">
-                     <sheet>
-                        <group>
+    <record model="ir.ui.view" id="curso_form_view">
+        <field name="name">curso.form</field>
+        <field name="model">openacademy.curso</field>
+        <field name="arch" type="xml">
+            <form string="Cursos da OpenAcademy">
+                <sheet>
+                    <group>
+                        <group string="Título do curso">
                             <field name="name"/>
                         </group>
-                        <notebook>
-                            <page string="A Descripción">
-                                <field name="descripcion"/>
-                                <field name="responsable_id"/>
-                            </page>
-                            <page string="Acerca de">
-                                Exemplo de notebooks
-                            </page>
-                        </notebook>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+                        <group string="Datos do curso">
+                            <field name="descripcion"/>
+                            <field name="responsable_id" string="O responsable"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
     <record model="ir.ui.view" id="curso_search_view">
             <field name="name">curso.search</field>
