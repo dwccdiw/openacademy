@@ -11,12 +11,16 @@
                     </header>
                     <sheet>
                         <group string="Datos xerais do curso">
-                            <field name="curso_id"/>
-                            <field name="name"/>
-                            <field name="instructor_id"/>
-                            <field name="nacionalidade"/>
-                            <field name="sexo"/>
-                            <field name="foto" widget="image" class="oe_avatar"/>
+                            <group>
+                                <field name="curso_id"/>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="instructor_id"/>
+                                <field name="nacionalidade"/>
+                                <field name="sexo"/>
+                                <field name="foto" widget="image" class="oe_avatar"/>
+                            </group>
                         </group>
                         <notebook>
                             <page string="Datos da sesión">

@@ -31,6 +31,8 @@ class sesion(models.Model):
     autorizado = fields.Boolean (string="¿Autorizado?", default=True)
     curso_id = fields.Many2one('openacademy.curso', ondelete='cascade', required=True,string="Título do Curso")
     # attendee_ids = fields.Many2many('res.partner',  string="Axudantes")
+    # attendee_ids = fields.Many2many ('management.student', relation='your_table_name', column1='course_id',
+    #                                  column2='student_id', string="Attendees")
     axudantes_ids = fields.Many2many('res.partner', ondelete='set null',string="Axudantes" )
     moeda_id = fields.Many2one ('res.currency')
     custo_por_hora = fields.Monetary ("Custo por hora", 'moeda_id')

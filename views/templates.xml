@@ -21,7 +21,24 @@
 
 
 
-        <!-- CARGA ESTOS VALORES NAS TABOAS openacademy.curso  openacademy.sesion-->
+        <!-- para engadir un rexistro na táboa ir_filters.
+        A opción de menú de "Favoritos" crea o rexistro equivalente ao seguinte
+        tendo en conta o que determinamos en "Filtros" e "Agrupar Por"
+        Para obter os datos podese crear manualmente e consultar os datos na táboa ir_filters.
+        No menú axustes-Técnico-Filtros de Usuario  podemos ver en modo tree o modelo ir.filters
+        con todos os rexistros creados-->
+        <record model="ir.filters" id="filtro 1 sesiones">
+            <field name="name">Filtro por curso</field>
+            <field name="model_id">openacademy.sesion</field>
+            <field name="context">{'group_by': ['curso_id']}</field>
+            <field name="is_default">true</field>
+            <field name="active">true</field>
+             <field name="sort">[]</field>
+            <field name="domain">[]</field><!-- Aquí iría o filtro -->
+            <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios-->
+            <field name="action_id">210</field>
+        </record>
+        <!-- Carga os seguites rexistros nas táboas openacademy.curso  openacademy.sesion-->
        <record model="openacademy.curso" id="openacademy curso 1">
             <field name="name">Curso 1</field>
             <field name="descripcion">Descripción do Curso 1
@@ -46,7 +63,6 @@
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">1</field>
-            <field name="axudantes_ids">3</field>    <!-- Falla -->
         </record>
         <record model="openacademy.sesion" id="openacademy sesion 12">
             <field name="name">Segunda sesión</field>
@@ -64,7 +80,7 @@
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">2</field>
-            <field name="axudantes_ids">3</field>    <!-- Falla -->
+            <field name="axudantes_ids" eval="[(6, 0, [ref('base.user_admin_res_partner')])]"/>
         </record>
          <record model="openacademy.sesion" id="openacademy sesion 22">
             <field name="name">Segunda sesión</field>
@@ -73,8 +89,25 @@
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">2</field>
-            <field name="axudantes_ids">3</field>    <!-- Falla -->
+            <field name="axudantes_ids" eval="[(6, 0, [3,7,8])]"/>
         </record>
+        <!--A relación many2many lévase na táboa openacademy_sesion_res_partner_rel-->
+    <!--    <record model="openacademy.sesion" id="curso 1 sesion 2 ax 1">
+            <field name="openacademy_sesion_id">2</field>
+            <field name="res_partner_id">3</field>
+        </record>
+        <record model="openacademy.sesion" id="curso 1 sesion 2 ax 2">
+            <field name="openacademy_sesion_id">2</field>
+            <field name="res_partner_id">7</field>
+        </record>-->
+<!--        <record model="openacademy.sesion.res.partner.rel">-->
+<!--            <field name="openacademy_sesion_id">2</field>-->
+<!--            <field name="res_partner_id">3</field>-->
+<!--        </record>-->
+<!--        <record model="openacademy.sesion.res.partner.rel" >-->
+<!--            <field name="openacademy_sesion_id">2</field>-->
+<!--            <field name="res_partner_id">7</field>-->
+<!--        </record>-->
     </data>
 
 </odoo>
