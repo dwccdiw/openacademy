@@ -71,6 +71,6 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-      <menuitem id="sesion_menu" name="Sesións" parent="openacademy_menu" action="sesion_list_action"/>
+
 
 </odoo>

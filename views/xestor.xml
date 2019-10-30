@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <!-- <record model="ir.ui.view" id="xestor_form_view">
+        <field name="name">xestor.form</field>
+        <field name="model">openacademy.xestor</field>
+        <field name="arch" type="xml">
+            <form string="Xestores da OpenAcademy">
+                <sheet>
+                    <group>
+                        <group string="Avatar do xestor">
+                            <field name="avatar"/>
+                        </group>
+                        <group string="Datos do xestor">
+                            <field name="name"/>
+                            <field name="email"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_form_todo_task_inherited"     model="ir.ui.view">
+  <field name="name">Todo Task form - User     extension</field>
+  <field name="model">todo.task</field>
+  <field name="inherit_id"
+    ref="todo_app.view_form_todo_task"/>
+  <field name="arch" type="xml">
+    &lt;!&ndash; ...match and extend elements here! ... &ndash;&gt;
+  </field
+</record>
+
+    <record model="ir.ui.view" id="xestor_search_view">
+            <field name="name">xestor.search</field>
+            <field name="model">openacademy.xestor</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="avatar"/>
+                </search>
+            </field>
+        </record>
+
+     <record model="ir.ui.view" id="xestor__tree_view">
+            <field name="name">xestor.tree</field>
+            <field name="model">openacademy.xestor</field>
+            <field name="arch" type="xml">
+                <tree string="Xestor Tree">
+                    <field name="name"/>
+                    <field name="avatar"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="xestor_list_action">
+            <field name="name">Xestor</field>
+            <field name="res_model">openacademy.xestor</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Tes que crear o primeiro xestor</p>
+            </field>
+        </record>-->
+</odoo>

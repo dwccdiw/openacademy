@@ -9,12 +9,15 @@
   'version': '0.1',
   'depends': ['base'],# módulos dos que depende o noso módulo
   'data': [
-      'security/ir.model.access.csv',
+      'views/xestor.xml',
       'views/cursos.xml',
+      'views/curso2.xml',
       'views/sesions.xml',
-      'views/templates.xml', # Só a primeira vez
+      'views/templates.xml',
+      'views/menu.xml',
       'reports/cursos_report.xml',
       'reports/sesions_dos_cursos_report.xml',
+      'security/ir.model.access.csv',
   ],
   'images': [],
   'license': 'AGPL-3',

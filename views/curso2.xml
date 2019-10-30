@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record model="ir.ui.view" id="curso_form_view">
-        <field name="name">curso.form</field>
-        <field name="model">openacademy.curso</field>
+    <record model="ir.ui.view" id="curso2_form_view">
+        <field name="name">curso2.form</field>
+        <field name="model">openacademy.curso2</field>
         <field name="arch" type="xml">
             <form string="Cursos da OpenAcademy">
                 <sheet>
                     <group>
                         <group string="Título do curso">
                             <field name="name"/>
+                            <field name="descripcion"/>
                         </group>
                         <group string="Datos do curso">
-                            <field name="descripcion"/>
                             <field name="orzamento"/>
                             <field name="moeda_id"/>
                             <field name="responsable_id" string="O responsable"/>
                         </group>
+                    </group>
+                    <group>
+                        <label for="sesion_ids"/>
+                        <field name="sesion_ids"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record model="ir.ui.view" id="curso_search_view">
-            <field name="name">curso.search</field>
-            <field name="model">openacademy.curso</field>
+    <record model="ir.ui.view" id="curso2_search_view">
+            <field name="name">curso2.search</field>
+            <field name="model">openacademy.curso2</field>
             <field name="arch" type="xml">
                 <search>
                     <field name="name"/>
@@ -33,11 +37,11 @@
             </field>
         </record>
 
-     <record model="ir.ui.view" id="curso_tree_view">
-            <field name="name">curso.tree</field>
-            <field name="model">openacademy.curso</field>
+     <record model="ir.ui.view" id="curso2_tree_view">
+            <field name="name">curso2.tree</field>
+            <field name="model">openacademy.curso2</field>
             <field name="arch" type="xml">
-                <tree string="Curso Tree">
+                <tree string="Curso2 Tree">
                     <field name="name"/>
                     <field name="responsable_id"/>
                     <field name="descripcion"/>
@@ -46,9 +50,9 @@
         </record>
 
 
-        <record model="ir.actions.act_window" id="curso_list_action">
+        <record model="ir.actions.act_window" id="curso2_list_action">
             <field name="name">Cursos</field>
-            <field name="res_model">openacademy.curso</field>
+            <field name="res_model">openacademy.curso2</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">

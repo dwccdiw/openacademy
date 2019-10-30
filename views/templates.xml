@@ -35,8 +35,8 @@
             <field name="active">true</field>
              <field name="sort">[]</field>
             <field name="domain">[]</field><!-- Aquí iría o filtro -->
-            <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios-->
-            <field name="action_id">210</field>
+            <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios 210-->
+            <field name="action_id" eval="ref('openacademy.sesion_list_action')"/><!-- Obter o id a partir do id externo-->
         </record>
         <!-- Carga os seguites rexistros nas táboas openacademy.curso  openacademy.sesion-->
        <record model="openacademy.curso" id="openacademy curso 1">
@@ -81,6 +81,8 @@
             <field name="instructor_id">3</field>
             <field name="curso_id">2</field>
             <field name="axudantes_ids" eval="[(6, 0, [ref('base.user_admin_res_partner')])]"/>
+                 <!--A relación many2many lévase na táboa openacademy_sesion_res_partner_rel
+                 obtemos o valor a partir do id externo-->
         </record>
          <record model="openacademy.sesion" id="openacademy sesion 22">
             <field name="name">Segunda sesión</field>
@@ -90,24 +92,8 @@
             <field name="instructor_id">3</field>
             <field name="curso_id">2</field>
             <field name="axudantes_ids" eval="[(6, 0, [3,7,8])]"/>
+             <!--A relación many2many lévase na táboa openacademy_sesion_res_partner_rel
+             damos directamente os índices-->
         </record>
-        <!--A relación many2many lévase na táboa openacademy_sesion_res_partner_rel-->
-    <!--    <record model="openacademy.sesion" id="curso 1 sesion 2 ax 1">
-            <field name="openacademy_sesion_id">2</field>
-            <field name="res_partner_id">3</field>
-        </record>
-        <record model="openacademy.sesion" id="curso 1 sesion 2 ax 2">
-            <field name="openacademy_sesion_id">2</field>
-            <field name="res_partner_id">7</field>
-        </record>-->
-<!--        <record model="openacademy.sesion.res.partner.rel">-->
-<!--            <field name="openacademy_sesion_id">2</field>-->
-<!--            <field name="res_partner_id">3</field>-->
-<!--        </record>-->
-<!--        <record model="openacademy.sesion.res.partner.rel" >-->
-<!--            <field name="openacademy_sesion_id">2</field>-->
-<!--            <field name="res_partner_id">7</field>-->
-<!--        </record>-->
     </data>
-
 </odoo>
