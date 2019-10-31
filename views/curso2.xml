@@ -9,18 +9,23 @@
                     <group>
                         <group string="Título do curso">
                             <field name="name"/>
+                        </group>
+                        <group string="Descripción">
                             <field name="descripcion"/>
                         </group>
-                        <group string="Datos do curso">
-                            <field name="orzamento"/>
-                            <field name="moeda_id"/>
-                            <field name="responsable_id" string="O responsable"/>
-                        </group>
                     </group>
-                    <group>
-                        <label for="sesion_ids"/>
-                        <field name="sesion_ids"/>
-                    </group>
+                    <notebook>
+                        <page string="Datos do curso">
+                            <group>
+                                <field name="orzamento"/>
+                                <field name="moeda_id"/>
+                                <field name="responsable_id" string="O responsable"/>
+                            </group>
+                        </page>
+                        <page string="Sesións do curso">
+                            <field name="sesion_ids"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

@@ -2,14 +2,8 @@ from odoo import fields, models
 
 
 class xestor(models.Model):
-    _inherit = 'res.partner'
-
+    _inherit = 'res.partner'# como  non lle proporcioamos  _name facemos herdanza por extensión
+                            # por tanto non se crea unha nova clase e os atributos engadense na clase pai
+                            # No xml das vistas temos que extender as vistas da clase pai
     avatar = fields.Char (required=True, string="Avatar")
 
-    # published_book_ids = fields.One2many(
-    #     'openacademy.curso',  #  modelo
-    #     'publisher_id',  # field for "this" on related model
-    #     string='Published Books')
-    #
-    # book_ids = fields.Many2many(
-    #     'library.book', string='Authored Books')

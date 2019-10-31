@@ -1,55 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-        <record model="ir.ui.view" id="sesion2_form_view">
-            <field name="name">sesion2.form</field>
-            <field name="model">openacademy.sesion2</field>
-            <field name="arch" type="xml">
-                <form string="Formulario de Sesión">
-                    <header>
-                        <button name="button_check_duracion" type="object"
-                                string="Comproba a duración" />
-                    </header>
-                    <sheet>
-                        <group string="Datos xerais do curso">
+    <record model="ir.ui.view" id="sesion2_form_view">
+        <field name="name">sesion2.form</field>
+        <field name="model">openacademy.sesion2</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de Sesión">
+                <header>
+                    <button name="button_check_duracion" type="object"
+                            string="Comproba a duración" />
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="foto" widget="image" class="oe_avatar"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="instructor_id"/>
+                        </group>
+                        <group>
                             <group>
-<!--                                <field name="curso_id"/>-->
-                                <field name="name"/>
+                                <field name="sexo"/>
                             </group>
                             <group>
-                                <field name="instructor_id"/>
                                 <field name="nacionalidade"/>
-                                <field name="sexo"/>
-                                <field name="foto" widget="image" class="oe_avatar"/>
                             </group>
                         </group>
-                        <notebook>
-                            <page string="Datos da sesión">
-                                <group>
-                                    <group string="Temporalización">
-                                        <field name="data_sesion"/>
-                                        <field name="duracion"/>
-                                    </group>
-                                    <group string="Localización">
-                                        <field name="asentos"/>
-                                    </group>
+                    </group>
+                    <notebook>
+                        <page string="Datos da sesión">
+                            <group>
+                                <group string="Temporalización">
+                                    <field name="data_sesion"/>
+                                    <field name="duracion"/>
                                 </group>
-                            </page>
-                            <page string="Axudantes">
-                                <label for="axudantes_ids"/>
-                                <field name="axudantes_ids"/>
-                            </page>
-                            <page string="Económico">
-                                <group>
-                                    <field name="autorizado" />
-                                    <field name="custo_por_hora" />
-                                    <field name="moeda_id"/>
+                                <group string="Localización">
+                                    <field name="asentos"/>
                                 </group>
-                            </page>
-                        </notebook>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+                            </group>
+                        </page>
+                        <page string="Axudantes">
+                            <label for="axudantes_ids"/>
+                            <field name="axudantes_ids"/>
+                        </page>
+                        <page string="Económico">
+                            <group>
+                                <field name="autorizado" />
+                                <field name="custo_por_hora" />
+                                <field name="moeda_id"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
 
     <record model="ir.ui.view" id="sesion2_tree_view">
