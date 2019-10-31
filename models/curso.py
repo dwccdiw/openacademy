@@ -23,4 +23,4 @@ class curso(models.Model):
     moeda_id = fields.Many2one ('res.currency')
     orzamento = fields.Monetary ("Orzamento", 'moeda_id')
     responsable_id = fields.Many2one('res.users', ondelete='set null',  index=True,string="Responsable")
-    _sql_constraints = [('nome unico', 'unique(nome_curso)', 'Non se pode repetir o nome')]
+    _sql_constraints = [('nome unico', 'unique(name)', 'Non se pode repetir o nome')]

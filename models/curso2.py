@@ -12,5 +12,5 @@ class curso2(models.Model):
     moeda_id = fields.Many2one ('res.currency')
     orzamento = fields.Monetary ("Orzamento", 'moeda_id')
     responsable_id = fields.Many2one('res.users', ondelete='set null',  index=True,string="Responsable")
-    sesion_ids = fields.One2many('openacademy.sesion',curso_id,'sesions')
-    _sql_constraints = [('nome unico', 'unique(nome_curso)', 'Non se pode repetir o nome')]
+    sesion_ids = fields.One2many('openacademy.sesion2','curso_id','sesion2')
+    _sql_constraints = [('nome unico', 'unique(name)', 'Non se pode repetir o nome')]

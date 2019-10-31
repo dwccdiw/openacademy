@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <record model="ir.ui.view" id="sesion2_form_view">
+            <field name="name">sesion2.form</field>
+            <field name="model">openacademy.sesion2</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de Sesión">
+                    <header>
+                        <button name="button_check_duracion" type="object"
+                                string="Comproba a duración" />
+                    </header>
+                    <sheet>
+                        <group string="Datos xerais do curso">
+                            <group>
+<!--                                <field name="curso_id"/>-->
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="instructor_id"/>
+                                <field name="nacionalidade"/>
+                                <field name="sexo"/>
+                                <field name="foto" widget="image" class="oe_avatar"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Datos da sesión">
+                                <group>
+                                    <group string="Temporalización">
+                                        <field name="data_sesion"/>
+                                        <field name="duracion"/>
+                                    </group>
+                                    <group string="Localización">
+                                        <field name="asentos"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Axudantes">
+                                <label for="axudantes_ids"/>
+                                <field name="axudantes_ids"/>
+                            </page>
+                            <page string="Económico">
+                                <group>
+                                    <field name="autorizado" />
+                                    <field name="custo_por_hora" />
+                                    <field name="moeda_id"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+    <record model="ir.ui.view" id="sesion2_tree_view">
+            <field name="name">sesion2.tree</field>
+            <field name="model">openacademy.sesion2</field>
+            <field name="arch" type="xml">
+                <tree string="Sesión Tree">
+                    <field name="name"/>
+                    <field name="curso_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="sesion2_list_action">
+            <field name="name">Sesións2</field>
+            <field name="res_model">openacademy.sesion2</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+</odoo>

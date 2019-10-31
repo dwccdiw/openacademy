@@ -13,6 +13,7 @@
       'views/cursos.xml',
       'views/curso2.xml',
       'views/sesions.xml',
+      'views/sesion2.xml',
       'views/templates.xml',
       'views/menu.xml',
       'reports/cursos_report.xml',
