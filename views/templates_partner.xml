@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <!-- Dar de alta en res.partner -->
+        <record model="res.partner" id="partner agorasi">
+            <field name="name">agorasi</field>
+            <field name="display_name">agorasi display</field>
+            <field name="email">agorasi@agorasi.com </field>
+            <field name="active">true</field>
+            <field name="company_id">1</field>
+            <field name="lang">es_ES</field>
+        </record>
+
+        <record model="res.partner" id="partner agoratamen">
+            <field name="name">agoratamen</field>
+            <field name="display_name">agoratamen display</field>
+            <field name="email">agoratamen@agoratamen.com </field>
+            <field name="active">true</field>
+            <field name="company_id">1</field>
+            <field name="lang">es_ES</field>
+        </record>
+    </data>
+</odoo>

@@ -20,42 +20,43 @@
         <!-- </template> -->
 
 
+
         <!-- para engadir un rexistro na táboa ir_filters.
         A opción de menú de "Favoritos" crea o rexistro equivalente ao seguinte
         tendo en conta o que determinamos en "Filtros" e "Agrupar Por"
         Para obter os datos podese crear manualmente e consultar os datos na táboa ir_filters.
         No menú axustes-Técnico-Filtros de Usuario  podemos ver en modo tree o modelo ir.filters
         con todos os rexistros creados-->
-        <record model="ir.filters" id="filtro 1 sesiones">
-            <field name="name">Filtro por curso</field>
-            <field name="model_id">openacademy.sesion</field>
-            <field name="context">{'group_by': ['curso_id']}</field>
+        <record model="ir.filters" id="filtro 1 sesiones2">
+            <field name="name">Filtro por curso2</field>
+            <field name="model_id">openacademy.curso2</field>
+            <field name="context">{'group_by': ['responsable_id']}</field>
             <field name="is_default">true</field>
             <field name="active">true</field>
             <field name="sort">[]</field>
             <field name="domain">[]</field><!-- Aquí iría o filtro -->
-            <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios 210-->
-            <field name="action_id" eval="ref('openacademy.sesion_list_action')"/><!-- Obter o id a partir do id externo-->
+            <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
+            <field name="action_id" eval="ref('openacademy.curso2_list_action')"/><!-- Obter o id a partir do id externo-->
         </record>
         <!-- Carga os seguites rexistros nas táboas openacademy.curso  openacademy.sesion-->
-        <record model="openacademy.curso" id="openacademy curso 1">
+        <record model="openacademy.curso2" id="openacademy curso 1">
             <field name="name">Curso 1</field>
             <field name="descripcion">Descripción do Curso 1
                 Pode ter varias liñas
             </field>
             <field name="responsable_id">3</field>
         </record>
-        <record model="openacademy.curso" id="openacademy curso 2">
+        <record model="openacademy.curso2" id="openacademy curso 2">
             <field name="name">Curso 2</field>
             <field name="descripcion">Descripción do Curso 2</field>
             <field name="responsable_id">3</field>
         </record>
-        <record model="openacademy.curso" id="openacademy curso 3">
+        <record model="openacademy.curso2" id="openacademy curso 3">
             <field name="name">Curso 3</field>
             <field name="descripcion">Descripción do Curso 3</field>
             <field name="responsable_id">3</field>
         </record>
-        <record model="openacademy.sesion" id="openacademy sesion 11">
+        <record model="openacademy.sesion2" id="openacademy sesion 11">
             <field name="name">Primeira sesión</field>
             <field name="duracion">2.5</field>
             <field name="data_sesion">10.25.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
@@ -63,7 +64,7 @@
             <field name="instructor_id">3</field>
             <field name="curso_id">1</field>
         </record>
-        <record model="openacademy.sesion" id="openacademy sesion 12">
+        <record model="openacademy.sesion2" id="openacademy sesion 12">
             <field name="name">Segunda sesión</field>
             <field name="duracion">3</field>
             <field name="data_sesion">10.30.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
@@ -72,7 +73,7 @@
             <field name="curso_id">1</field>
             <field name="axudantes_ids">3</field>    <!-- Falla -->
         </record>
-        <record model="openacademy.sesion" id="openacademy sesion 21">
+        <record model="openacademy.sesion2" id="openacademy sesion 21">
             <field name="name">Primeira sesión</field>
             <field name="duracion">2.5</field>
             <field name="data_sesion">10.25.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
@@ -83,7 +84,7 @@
             <!--A relación many2many lévase na táboa openacademy_sesion_res_partner_rel
             obtemos o valor a partir do id externo-->
         </record>
-        <record model="openacademy.sesion" id="openacademy sesion 22">
+        <record model="openacademy.sesion2" id="openacademy sesion 22">
             <field name="name">Segunda sesión</field>
             <field name="duracion">3</field>
             <field name="data_sesion">10.30.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
@@ -91,9 +92,9 @@
             <field name="instructor_id">3</field>
             <field name="curso_id">2</field>
             <field name="axudantes_ids" eval="[(6, 0, [ref('partner agorasi'),ref('partner agoratamen')])]"/>
-            <!-- <field name="axudantes_ids" eval="[(6, 0, [13,14])]"/>
-        A relación many2many lévase na táboa openacademy_sesion_res_partner_rel
-        damos directamente os índices se os coñecemos-->
+            <!--   <field name="axudantes_ids" eval="[(6, 0, [13,14])]"/>
+                A relación many2many lévase na táboa openacademy_sesion_res_partner_rel
+                damos directamente os índices se os coñecemos-->
         </record>
     </data>
 </odoo>

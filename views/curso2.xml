@@ -7,10 +7,10 @@
             <form string="Cursos da OpenAcademy">
                 <sheet>
                     <group>
-                        <group string="Título do curso">
+                        <group>
                             <field name="name"/>
                         </group>
-                        <group string="Descripción">
+                        <group>
                             <field name="descripcion"/>
                         </group>
                     </group>
@@ -20,6 +20,8 @@
                                 <field name="orzamento"/>
                                 <field name="moeda_id"/>
                                 <field name="responsable_id" string="O responsable"/>
+                                <field name="valor"/>
+                                <field name="porcentaxe"/>
                             </group>
                         </page>
                         <page string="Sesións do curso">

@@ -4,18 +4,6 @@ from odoo.exceptions import Warning
 from odoo.exceptions import ValidationError
 
 
-# class openacademy(models.Model):
-# _name = 'openacademy.openacademy'
-#
-# name = fields.Char()
-# value = fields.Integer()
-# value2 = fields.Float(compute="_value_pc", store=True)
-# description = fields.Text()
-#
-# @api.depends('value')
-# def _value_pc(self):
-#      self.value2 = float(self.value) / 100
-
 class sesion2(models.Model):
     _name = 'openacademy.sesion2' #IMPORTANTE é o nome da táboa
     _description = "Sesións dos cursos OpenAcademy "
@@ -30,12 +18,16 @@ class sesion2(models.Model):
     sexo = fields.Selection ([('male', 'Home'), ('female', 'Muller'), ('others', 'Outros')], string='Sexo')
     autorizado = fields.Boolean (string="¿Autorizado?", default=True)
     curso_id = fields.Many2one('openacademy.curso2', ondelete='cascade', required=True,string="Título do Curso")
-    # attendee_ids = fields.Many2many('res.partner',  string="Axudantes")
+
     # attendee_ids = fields.Many2many ('management.student', relation='your_table_name', column1='course_id',
     #                                  column2='student_id', string="Attendees")
-    axudantes_ids = fields.Many2many('res.partner', ondelete='set null',string="Axudantes" )
+    axudantes_ids = fields.Many2many('res.partner', relation='openacademy_relacion_sesion2_res_partner',
+                                     column1='sesion2_id',column2='axundante_id',
+                                     ondelete='set null',string="Axudantes" )# Para definir nos a táboa relación, senón podería ser
+    # axudantes_ids = fields.Many2many('res.partner', ondelete='set null',string="Axudantes" )
     moeda_id = fields.Many2one ('res.currency')
     custo_por_hora = fields.Monetary ("Custo por hora", 'moeda_id')
+
 
     @api.multi
     def button_check_duracion(self): # é necesario engadir no xml da vista no header o botón
