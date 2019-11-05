@@ -58,7 +58,7 @@
         <record model="openacademy.sesion" id="openacademy sesion 11">
             <field name="name">Primeira sesión</field>
             <field name="duracion">2.5</field>
-            <field name="data_sesion">10.25.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
+            <field name="data_sesion">25.10.2020 16:00:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">1</field>
@@ -66,7 +66,7 @@
         <record model="openacademy.sesion" id="openacademy sesion 12">
             <field name="name">Segunda sesión</field>
             <field name="duracion">3</field>
-            <field name="data_sesion">10.30.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
+            <field name="data_sesion">25.10.2020 16:00:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">1</field>
@@ -75,7 +75,7 @@
         <record model="openacademy.sesion" id="openacademy sesion 21">
             <field name="name">Primeira sesión</field>
             <field name="duracion">2.5</field>
-            <field name="data_sesion">10.25.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
+            <field name="data_sesion">25.10.2020 16:00:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">2</field>
@@ -86,7 +86,7 @@
         <record model="openacademy.sesion" id="openacademy sesion 22">
             <field name="name">Segunda sesión</field>
             <field name="duracion">3</field>
-            <field name="data_sesion">10.30.2020 16:00:00</field><!-- Formato mm.dd.yyyy -->
+            <field name="data_sesion">25.10.2020 16:00:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">2</field>

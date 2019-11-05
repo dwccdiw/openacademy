@@ -23,12 +23,12 @@ class sesion(models.Model):
     name = fields.Char (required=True, string="Nome da Sesión") #IMPORTANTE o campo ten que chamarse name
     data_sesion = fields.Datetime(string="Data da Sesión",default=lambda self: fields.Datetime.now())
     duracion = fields.Float(digits=(6, 2), string="Duración en horas", default=2)
-    asentos = fields.Integer(string="Número de asentos" )
+    asentos = fields.Integer(string="Número de Asentos" )
     instructor_id = fields.Many2one('res.partner',string="Docente")
     nacionalidade = fields.Many2one ('res.country', string='Nacionalidade')
-    foto = fields.Binary (string='Foto')
-    sexo = fields.Selection ([('male', 'Home'), ('female', 'Muller'), ('others', 'Outros')], string='Sexo')
-    autorizado = fields.Boolean (string="¿Autorizado?", default=True)
+    foto = fields.Binary(string='Foto')
+    sexo = fields.Selection([('male', 'Home'), ('female', 'Muller'), ('others', 'Outros')], string='Sexo')
+    autorizado = fields.Boolean(string="¿Autorizado?", default=True)
     curso_id = fields.Many2one('openacademy.curso', ondelete='cascade', required=True,string="Título do Curso")
     # attendee_ids = fields.Many2many('res.partner',  string="Axudantes")
     # attendee_ids = fields.Many2many ('management.student', relation='your_table_name', column1='course_id',
