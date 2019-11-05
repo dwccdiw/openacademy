@@ -39,7 +39,7 @@ class sesion2(models.Model):
             else:
                 raise Warning (
                     'Duración da %s correcta' % sesion.name)
-                return True
+        return True
 
     @api.constrains ('duracion')
     def _constrain_duracion_sesion(self):
