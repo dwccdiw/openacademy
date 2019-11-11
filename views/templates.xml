@@ -70,7 +70,7 @@
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">1</field>
-            <field name="axudantes_ids">3</field>    <!-- Falla -->
+            <field name="axudantes_ids">3</field>
         </record>
         <record model="openacademy.sesion" id="openacademy sesion 21">
             <field name="name">Primeira sesión</field>

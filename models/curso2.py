@@ -21,4 +21,5 @@ class curso2(models.Model):
 
     @api.depends('porcentaxe')
     def _valor(self):
-         self.valor = float(self.porcentaxe)*float(self.orzamento) / 100
+        for rexistro in self:
+            rexistro.valor = float(rexistro.porcentaxe)*float(rexistro.orzamento) / 100
