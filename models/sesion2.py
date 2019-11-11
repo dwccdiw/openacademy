@@ -31,19 +31,19 @@ class sesion2(models.Model):
 
     @api.multi
     def button_check_duracion(self): # é necesario engadir no xml da vista no header o botón
-        self.ensure_one ()
-        for sesion in self:
-            if self.duracion < 1 or self.duracion > 4:
+        #self.ensure_one ()
+        for rexistro in self:
+            if rexistro.duracion < 1 or rexistro.duracion > 4:
                 raise Warning (
-                    'A duración da %s ten que ser entre 1 e 4 horas' % sesion.name)
+                    'A duración da %s ten que ser entre 1 e 4 horas' % rexistro.name)
             else:
                 raise Warning (
-                    'Duración da %s correcta' % sesion.name)
+                    'Duración da %s correcta' % rexistro.name)
                 return True
 
     @api.constrains ('duracion')
     def _constrain_duracion_sesion(self):
-        for sesion in self:
-            if self.duracion < 1 or self.duracion > 4:
+        for rexistro in self:
+            if rexistro.duracion < 1 or rexistro.duracion > 4:
                 raise ValidationError (
-                    'A duración da %s ten que ser entre 1 e 4 horas' % sesion.name)
+                    'A duración da %s ten que ser entre 1 e 4 horas' % rexistro.name)
