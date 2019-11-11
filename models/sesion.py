@@ -37,21 +37,21 @@ class sesion(models.Model):
     moeda_id = fields.Many2one ('res.currency')
     custo_por_hora = fields.Monetary ("Custo por hora", 'moeda_id')
 
-    #@api.multi
+    @api.multi
     def button_check_duracion(self): # é necesario engadir no xml da vista no header o botón
-       # self.ensure_one ()
-        for rexistro in self:
-            if rexistro.duracion < 1 or rexistro.duracion > 4:
+        self.ensure_one ()
+        for sesion in self:
+            if self.duracion < 1 or self.duracion > 4:
                 raise Warning (
-                    'A duración da %s ten que ser entre 1 e 4 horas' % rexistro.name)
+                    'A duración da %s ten que ser entre 1 e 4 horas' % sesion.name)
             else:
                 raise Warning (
-                    'Duración da %s correcta' % rexistro.name)
+                    'Duración da %s correcta' % sesion.name)
                 return True
 
     @api.constrains ('duracion')
     def _constrain_duracion_sesion(self):
-        for rexistro in self:
-            if rexistro.duracion < 1 or rexistro.duracion > 4:
+        for sesion in self:
+            if self.duracion < 1 or self.duracion > 4:
                 raise ValidationError (
-                    'A duración da %s ten que ser entre 1 e 4 horas' % rexistro.name)
+                    'A duración da %s ten que ser entre 1 e 4 horas' % sesion.name)
