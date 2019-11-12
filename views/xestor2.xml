@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+   <!-- vista de "xestor2" que herda por prototico co cal se crea unha nova táboa-->
+   <record model="ir.ui.view" id="xestor2_form_view">
+      <field name="name">xestor2.form</field>
+      <field name="model">openacademy.xestor2</field><!--Modelo creado porque usamos herdanza de prototipo-->
+      <field name="inherit_id" ref="base.view_partner_form"/> <!--  o id externo atopamolo no menú técnico-vistas-->
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+         <data>
+            <field name="name" position="after">
+               <field name="avatar2"/>
+            </field>
+         </data>
+      </field>
+   </record>
+
+   <record model="ir.actions.act_window" id="xestor2_list_action">
+      <field name="name">Xestor2</field>
+       <!--<field name="res_model">res.partner</field>Non herda a vista. -->
+      <field name="res_model">openacademy.xestor2</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+         <p class="o_view_nocontent_smiling_face">Tes que crear o primeiro xestor</p>
+      </field>
+   </record>
+</odoo>

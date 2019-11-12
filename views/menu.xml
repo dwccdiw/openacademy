@@ -9,4 +9,6 @@
     <menuitem id="curso2_menu" name="Curso2" parent="openacademy_menu2" action="curso2_list_action"/>
     <!--<menuitem id="sesion2_menu" name="Sesión2" parent="openacademy_menu2" action="sesion2_list_action"/>-->
     <menuitem id="xestor_menu" name="Xestor" parent="main_openacademy_menu" action="xestor_list_action"/>
+    <menuitem id="xestor2_menu" name="Xestor2" parent="main_openacademy_menu" action="xestor2_list_action"/>
+    <menuitem id="xestor3_menu" name="Xestor3" parent="main_openacademy_menu" action="xestor3_list_action"/>
 </odoo>

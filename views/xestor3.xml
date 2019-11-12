@@ -2,23 +2,23 @@
 <odoo>
 
    <!-- vista de "xestor" que herda da clase res.partner e con un atributo engadido "avatar"-->
-   <record model="ir.ui.view" id="xestor_form_view">
-      <field name="name">xestor.form</field>
-      <field name="model">res.partner</field> <!-- Módelo do que herdamos -->
+   <record model="ir.ui.view" id="xestor3_form_view">
+      <field name="name">xestor3.form</field>
+      <field name="model">openacademy.xestor3</field> <!-- Módelo do que herdamos -->
       <field name="inherit_id" ref="base.view_partner_form"/><!--Podése buscar o id externo no menú técnico-vistas-->
       <field name="type">form</field>
       <field name="arch" type="xml">
          <data>
             <field name="name" position="after">
-               <field name="avatar"/>
+               <field name="avatar3"/>
             </field>
          </data>
       </field>
    </record>
 
-   <record model="ir.actions.act_window" id="xestor_list_action">
-      <field name="name">Xestor</field>
-      <field name="res_model">res.partner</field>
+   <record model="ir.actions.act_window" id="xestor3_list_action">
+      <field name="name">Xestor3</field>
+      <field name="res_model">openacademy.xestor3</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
       <field name="help" type="html">

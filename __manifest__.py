@@ -10,6 +10,8 @@
   'depends': ['base'],# módulos dos que depende o noso módulo
   'data': [
       'views/xestor.xml',
+      'views/xestor2.xml',
+      'views/xestor3.xml',
       'views/cursos.xml',
       'views/curso2.xml',
       'views/sesions.xml',

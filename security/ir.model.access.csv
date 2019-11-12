@@ -3,3 +3,5 @@ openacademy_curso,openacademy.curso,model_openacademy_curso,base.group_user,1,1,
 openacademy_sesion,openacademy.sesion,model_openacademy_sesion,base.group_user,1,1,1,1
 openacademy_curso2,openacademy.curso2,model_openacademy_curso2,base.group_user,1,1,1,1
 openacademy_sesion2,openacademy.sesion2,model_openacademy_sesion2,base.group_user,1,1,1,1
+openacademy_xestor2,openacademy.xestor2,model_openacademy_xestor2,base.group_user,1,1,1,1
+openacademy_xestor3,openacademy.xestor3,model_openacademy_xestor3,base.group_user,1,1,1,1
