@@ -12,13 +12,13 @@
         <field name="name">Usuario</field> <!-- Nome para o  grupo de usuarios que se garda en res_groups-->
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
-        <field name="category_id" ref="Educacion"/>
+        <field name="category_id" ref="Grupos Openacademy"/>
     </record>
 
     <record id="group_manager" model="res.groups">
         <field name="name">Manager</field> <!-- Nome para o  grupo de usuarios que se garda en res_groups -->
         <field name="implied_ids" eval="[(4, ref('openacademy.group_user'))]"/>
-        <field name="category_id" ref="Educacion"/>
+        <field name="category_id" ref="Grupos Openacademy"/>
     </record>
 </odoo>
 
