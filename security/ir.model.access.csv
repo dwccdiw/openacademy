@@ -1,7 +1,12 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-openacademy_curso,openacademy.curso,model_openacademy_curso,base.group_user,1,1,1,1
-openacademy_sesion,openacademy.sesion,model_openacademy_sesion,base.group_user,1,1,1,1
-openacademy_curso2,openacademy.curso2,model_openacademy_curso2,base.group_user,1,1,1,1
-openacademy_sesion2,openacademy.sesion2,model_openacademy_sesion2,base.group_user,1,1,1,1
+openacademy_curso_admin, openacademy.curso.admin,model_openacademy_curso,openacademy.group_manager,1,1,1,1
+openacademy_curso_user, openacademy.curso.user,model_openacademy_curso,openacademy.group_user,1,0,0,0
+openacademy_sesion_admin, openacademy.sesion.admin,model_openacademy_sesion,openacademy.group_manager,1,1,1,1
+openacademy_sesion_user, openacademy.sesion.user,model_openacademy_sesion,openacademy.group_user,1,0,0,0
+openacademy_curso2_admin, openacademy.curso2.admin,model_openacademy_curso2,openacademy.group_manager,1,1,1,1
+openacademy_sesion2_admin, openacademy.sesion2.admin,model_openacademy_sesion2,openacademy.group_manager,1,1,1,1
+openacademy_curso2_user, openacademy.curso2.user,model_openacademy_curso2,openacademy.group_manager,1,0,0,0
+openacademy_sesion2_user, openacademy.sesion2.user,model_openacademy_sesion2,openacademy.group_manager,1,0,0,0
 openacademy_xestor2,openacademy.xestor2,model_openacademy_xestor2,base.group_user,1,1,1,1
 openacademy_xestor3,openacademy.xestor3,model_openacademy_xestor3,base.group_user,1,1,1,1
+

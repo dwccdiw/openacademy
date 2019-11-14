@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo> <!--http://www.odoo.yenthevg.com/creating-security-groups-odoo/-->
+
+    <record model="ir.module.category" id="Grupos Openacademy">
+        <field name="name">Openacademy Grupos:</field><!-- Se visualiza na pantalla de usuario para escoller o grupo e
+         é o nome para a categoría-->
+        <field name="description">Nivel de acceso para este modulo</field>
+        <field name="sequence">3</field>
+    </record>
+
+    <record id="group_user" model="res.groups">
+        <field name="name">Usuario</field> <!-- Nome para o  grupo de usuarios que se garda en res_groups-->
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="category_id" ref="Educacion"/>
+    </record>
+
+    <record id="group_manager" model="res.groups">
+        <field name="name">Manager</field> <!-- Nome para o  grupo de usuarios que se garda en res_groups -->
+        <field name="implied_ids" eval="[(4, ref('openacademy.group_user'))]"/>
+        <field name="category_id" ref="Educacion"/>
+    </record>
+</odoo>
+

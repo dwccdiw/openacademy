@@ -5,10 +5,11 @@
   'description': 'Formación de proba en varias liñas',
   'author': 'odoo e eu',
   'website': 'http://www.antonio.com',
-  'category': 'Educacion',
+  'category': 'Educacion',# Os grupos de usuarios que se definan irán catalogados nesta categoría
   'version': '0.1',
   'depends': ['base'],# módulos dos que depende o noso módulo
   'data': [
+      'security/reglas_grupos.xml',
       'views/xestor.xml',
       'views/xestor2.xml',
       'views/xestor3.xml',
