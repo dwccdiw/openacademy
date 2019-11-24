@@ -2,16 +2,16 @@
     <menuitem id="main_openacademy_menu" name="Open Academy"/>
 
     <menuitem id="openacademy_menu" name="Menú de Open Academy" parent="main_openacademy_menu"
-              groups="openacademy.group_user"/>
+              groups="openacademy.grupo_usuario"/>
     <menuitem id="cursos_menu" name="Cursos" parent="openacademy_menu" action="curso_list_action"
-              groups="openacademy.group_user"/>
+              groups="openacademy.grupo_usuario"/>
     <menuitem id="sesion_menu" name="Sesións" parent="openacademy_menu" action="sesion_list_action"
-              groups="openacademy.group_user"/>
+              groups="openacademy.grupo_usuario"/>
 
     <menuitem id="openacademy_menu2" name="Menú de Open Academy 2" parent="main_openacademy_menu"
-              groups="openacademy.group_manager"/>
+              groups="openacademy.grupo_manager"/>
     <menuitem id="curso2_menu" name="Curso2" parent="openacademy_menu2" action="curso2_list_action"
-              groups="openacademy.group_manager"/>
+              groups="openacademy.grupo_manager"/>
     <!--<menuitem id="sesion2_menu" name="Sesión2" parent="openacademy_menu2" action="sesion2_list_action"/>-->
     <menuitem id="xestor_menu" name="Xestor" parent="main_openacademy_menu" action="xestor_list_action"/>
     <menuitem id="xestor2_menu" name="Xestor2" parent="main_openacademy_menu" action="xestor2_list_action"/>

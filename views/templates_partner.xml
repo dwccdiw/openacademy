@@ -25,7 +25,7 @@
             <field name="company_id">1</field>
             <field name="lang">es_ES</field>
             <field name="login">agoraUsuario@agoraUsuario.com</field>
-            <field name="groups_id" eval="[(6, 0, [ref('openacademy.group_user')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('openacademy.grupo_usuario')])]"/>
             <!--A relación many2many lévase na táboa res_groups_users_rel
             obtemos o valor a partir do id externo
             O nome do campo relación many2many https://useopenerp.com/v8/model/res-users    -->
