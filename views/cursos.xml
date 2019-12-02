@@ -15,6 +15,7 @@
                             <field name="orzamento"/>
                             <field name="moeda_id"/>
                             <field name="responsable_id" string="O responsable"/>
+<!--                            <field name="tax_price" widget="monetary" digits="(14,0)"  options="{'currency_field': 'currency_id'}"/>-->
                         </group>
                     </group>
                 </sheet>

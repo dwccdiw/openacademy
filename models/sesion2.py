@@ -27,7 +27,7 @@ class sesion2(models.Model):
     # axudantes_ids = fields.Many2many('res.partner', ondelete='set null',string="Axudantes" )
     moeda_id = fields.Many2one ('res.currency')
     custo_por_hora = fields.Monetary ("Custo por hora", 'moeda_id')
-
+    mes_date = fields.Char (compute="_cambio_data", size=15, store=True)
 
     @api.multi
     def button_check_duracion(self): # é necesario engadir no xml da vista no header o botón
@@ -40,6 +40,17 @@ class sesion2(models.Model):
                 raise Warning (
                     'Duración da %s correcta' % rexistro.name)
                 return True
+
+
+    @api.constrains ('data_sesion')
+    def _valor(self):
+        for rexistro in self:
+            if (rexistro.curso_id.data_inicio > rexistro.data_sesion) or (
+                    rexistro.curso_id.data_fin < rexistro.data_sesion):
+                raise ValidationError (
+                    "A DATA DA SESIÓN %s ten que estar entre '%s' e '%s'" % (
+                    rexistro.name, rexistro.curso_id.data_inicio, rexistro.curso_id.data_fin))
+
 
     @api.constrains ('duracion')
     def _constrain_duracion_sesion(self):

@@ -1,25 +1,5 @@
 <odoo>
-    <data>
-        <!-- <template id="listing"> -->
-        <!--   <ul> -->
-        <!--     <li t-foreach="objects" t-as="object"> -->
-        <!--       <a t-attf-href="#{ root }/objects/#{ object.id }"> -->
-        <!--         <t t-esc="object.display_name"/> -->
-        <!--       </a> -->
-        <!--     </li> -->
-        <!--   </ul> -->
-        <!-- </template> -->
-        <!-- <template id="object"> -->
-        <!--   <h1><t t-esc="object.display_name"/></h1> -->
-        <!--   <dl> -->
-        <!--     <t t-foreach="object._fields" t-as="field"> -->
-        <!--       <dt><t t-esc="field"/></dt> -->
-        <!--       <dd><t t-esc="object[field]"/></dd> -->
-        <!--     </t> -->
-        <!--   </dl> -->
-        <!-- </template> -->
-
-
+    <data noupdate="1">
 
         <!-- para engadir un rexistro na táboa ir_filters.
         A opción de menú de "Favoritos" crea o rexistro equivalente ao seguinte
@@ -27,6 +7,8 @@
         Para obter os datos podese crear manualmente e consultar os datos na táboa ir_filters.
         No menú axustes-Técnico-Filtros de Usuario  podemos ver en modo tree o modelo ir.filters
         con todos os rexistros creados-->
+
+
         <record model="ir.filters" id="filtro 1 sesiones2">
             <field name="name">Filtro por curso2</field>
             <field name="model_id">openacademy.curso2</field>
@@ -38,36 +20,42 @@
             <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
             <field name="action_id" eval="ref('openacademy.curso2_list_action')"/><!-- Obter o id a partir do id externo-->
         </record>
-        <!-- Carga os seguites rexistros nas táboas openacademy.curso  openacademy.sesion-->
-        <record model="openacademy.curso2" id="openacademy curso 1">
+<!--        &lt;!&ndash; Carga os seguites rexistros nas táboas openacademy.curso  openacademy.sesion&ndash;&gt;-->
+        <record model="openacademy.curso2"  id="openacademy curso 1">
             <field name="name">Curso 1</field>
             <field name="descripcion">Descripción do Curso 1
                 Pode ter varias liñas
             </field>
+            <field name="data_inicio">10.25.2020 16:00:00</field>
+            <field name="data_fin">10.25.2020 16:50:00</field>
             <field name="responsable_id">3</field>
         </record>
-        <record model="openacademy.curso2" id="openacademy curso 2">
+        <record model="openacademy.curso2"  id="openacademy curso 2">
             <field name="name">Curso 2</field>
             <field name="descripcion">Descripción do Curso 2</field>
+            <field name="data_inicio">10.25.2020 16:00:00</field>
+            <field name="data_fin">10.25.2020 16:50:00</field>
             <field name="responsable_id">3</field>
         </record>
-        <record model="openacademy.curso2" id="openacademy curso 3">
+        <record model="openacademy.curso2"  id="openacademy curso 3">
             <field name="name">Curso 3</field>
             <field name="descripcion">Descripción do Curso 3</field>
+            <field name="data_inicio">10.25.2020 16:00:00</field>
+            <field name="data_fin">10.25.2020 16:50:00</field>
             <field name="responsable_id">3</field>
         </record>
-        <record model="openacademy.sesion2" id="openacademy sesion 11">
+        <record model="openacademy.sesion2"  id="openacademy sesion 11">
             <field name="name">Primeira sesión</field>
             <field name="duracion">2.5</field>
-            <field name="data_sesion">10.25.2020 16:00:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
+            <field name="data_sesion">10.25.2020 16:01:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">1</field>
         </record>
-        <record model="openacademy.sesion2" id="openacademy sesion 12">
+        <record model="openacademy.sesion2"  id="openacademy sesion 12">
             <field name="name">Segunda sesión</field>
             <field name="duracion">3</field>
-            <field name="data_sesion">10.25.2020 16:00:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
+            <field name="data_sesion">10.25.2020 16:01:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">1</field>
@@ -76,18 +64,18 @@
         <record model="openacademy.sesion2" id="openacademy sesion 21">
             <field name="name">Primeira sesión</field>
             <field name="duracion">2.5</field>
-            <field name="data_sesion">10.25.2020 16:00:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
+            <field name="data_sesion">10.25.2020 16:01:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">2</field>
             <field name="axudantes_ids" eval="[(6, 0, [ref('base.user_admin_res_partner')])]"/>
-            <!--A relación many2many lévase na táboa openacademy_sesion_res_partner_rel
-            obtemos o valor a partir do id externo-->
+<!--            &lt;!&ndash;A relación many2many lévase na táboa openacademy_sesion_res_partner_rel-->
+<!--            obtemos o valor a partir do id externo&ndash;&gt;-->
         </record>
-        <record model="openacademy.sesion2" id="openacademy sesion 22">
+        <record model="openacademy.sesion2"  id="openacademy sesion 22">
             <field name="name">Segunda sesión</field>
             <field name="duracion">3</field>
-            <field name="data_sesion">10.25.2020 16:00:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
+            <field name="data_sesion">10.25.2020 16:01:00</field><!--Cambiar o formato en postgres co comando "sudo -u postgres psql" e "set datestyle to DMY;" -->
             <field name="asentos">24</field>
             <field name="instructor_id">3</field>
             <field name="curso_id">2</field>

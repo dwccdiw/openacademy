@@ -36,6 +36,7 @@
                             <group>
                                 <group string="Temporalización">
                                     <field name="data_sesion"/>
+                                      <field name="mes_date"/>
                                     <field name="duracion"/>
                                 </group>
                                 <group string="Localización">
