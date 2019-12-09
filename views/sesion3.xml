@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="sesion3_form_view">
+        <field name="name">sesion3.form</field>
+        <field name="model">openacademy.sesion3</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de Sesión">
+                <header>
+                    <button name="button_check_duracion" type="object"
+                            string="Comproba a duración" />
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+
+                    </group>
+                    <notebook>
+                        <page string="Datos da sesión">
+                            <group>
+                                <group string="Temporalización">
+                                    <field name="data_sesion"/>
+                                    <field name="mes_date"/>
+                                    <field name="duracion"/>
+                                </group>
+
+                            </group>
+                        </page>
+                        <page string="Localización">
+                            <group >
+                                <field name="asentos"/>
+                                <field name="enderezo"/>
+                                <field name="localidade"/>
+                                <field name="provincia"/>
+                                <field name="pais"/>
+                                <field name="codigo_postal"/>
+                            </group>
+                        </page>
+                        <page string="Asistentes">
+                            <label for="asistentes_ids"/>
+                            <field name="asistentes_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="sesion3_tree_view">
+        <field name="name">sesion3.tree</field>
+        <field name="model">openacademy.sesion3</field>
+        <field name="arch" type="xml">
+            <tree string="Sesión Tree">
+                <field name="name"/>
+                <field name="curso_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="sesion3_list_action">
+        <field name="name">Sesións3</field>
+        <field name="res_model">openacademy.sesion3</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

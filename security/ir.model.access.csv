@@ -7,6 +7,10 @@ openacademy_curso2_admin, openacademy.curso2.admin,model_openacademy_curso2,open
 openacademy_sesion2_admin, openacademy.sesion2.admin,model_openacademy_sesion2,openacademy.grupo_manager,1,1,1,1
 openacademy_curso2_user, openacademy.curso2.user,model_openacademy_curso2,openacademy.grupo_manager,1,0,0,0
 openacademy_sesion2_user, openacademy.sesion2.user,model_openacademy_sesion2,openacademy.grupo_manager,1,0,0,0
+openacademy_curso3_admin, openacademy.curso3.admin,model_openacademy_curso3,openacademy.grupo_manager,1,1,1,1
+openacademy_sesion3_admin, openacademy.sesion3.admin,model_openacademy_sesion3,openacademy.grupo_manager,1,1,1,1
+openacademy_curso3_user, openacademy.curso3.user,model_openacademy_curso3,openacademy.grupo_manager,1,0,0,0
+openacademy_sesion3_user, openacademy.sesion3.user,model_openacademy_sesion3,openacademy.grupo_manager,1,0,0,0
 openacademy_xestor2,openacademy.xestor2,model_openacademy_xestor2,base.group_user,1,1,1,1
 openacademy_xestor3,openacademy.xestor3,model_openacademy_xestor3,base.group_user,1,1,1,1
 

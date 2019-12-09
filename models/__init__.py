@@ -8,3 +8,5 @@ from . import curso
 from . import sesion
 from . import curso2
 from . import sesion2
+from . import curso3
+from . import sesion3

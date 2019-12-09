@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="curso3_form_view">
+        <field name="name">curso3.form</field>
+        <field name="model">openacademy.curso3</field>
+        <field name="arch" type="xml">
+            <form string="Cursos">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="cartel" widget="image" class="oe_avatar"/>
+                        </group>
+                        <group>
+                            <field name="titulo"/>
+                            <field name="descripcion"/>
+                            <field name="data_inicio"/>
+                            <field name="data_fin"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Datos do curso">
+                            <group>
+                                <group>
+                                    <field name="autorizado"/>
+                                    <field name="moeda_euro_id"  invisible="1"/>
+                                    <field name="material_en_euros"/>
+                                    <field name="docencia_en_euros"/>
+                                    <field name="orzamento_total" />
+                                </group>
+                                <group>
+                                    <field name="relator1_id" />
+                                    <field name="relator2_id"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Sesións do curso">
+                            <field name="sesion_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="curso3_search_view">
+        <field name="name">curso3.search</field>
+        <field name="model">openacademy.curso3</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="relator1_id"/>
+                <field name="relator2_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="curso3_tree_view">
+        <field name="name">curso3.tree</field>
+        <field name="model">openacademy.curso3</field>
+        <field name="arch" type="xml">
+            <tree string="Curso3 Tree">
+                <field name="name"/>
+                <field name="relator1_id"/>
+                <field name="relator2_id"/>
+                <field name="data_inicio"/>
+                <field name="data_fin"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="curso3_list_action">
+        <field name="name">Curso3</field>
+        <field name="res_model">openacademy.curso3</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Tes que crear o primeiro curso</p>
+        </field>
+    </record>
+</odoo>
