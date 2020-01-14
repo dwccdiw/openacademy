@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
 
-    <record id="paperformat_euro_landscape"
-            model="report.paperformat">
+    <record id="paperformat_euro_landscape" model="report.paperformat">
         <field name="name">European A4 Landscape</field>
         <field name="default" eval="True" />
         <field name="format">A4</field>

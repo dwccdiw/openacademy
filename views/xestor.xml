@@ -10,8 +10,12 @@
       <field name="arch" type="xml">
          <data>
             <field name="name" position="after">
-               <field name="avatar"/>
+               <group>
+                  <field name="apelidos"/>
+                  <field name="avatar"/>
+               </group>
             </field>
+
          </data>
       </field>
    </record>
@@ -20,7 +24,7 @@
       <field name="name">Xestor</field>
       <field name="res_model">res.partner</field>
       <field name="view_type">form</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_pmode">tree,form</field>
       <field name="help" type="html">
          <p class="o_view_nocontent_smiling_face">Tes que crear o primeiro xestor</p>
       </field>
