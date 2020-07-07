@@ -63,7 +63,6 @@
     <record model="ir.actions.act_window" id="sesion3_list_action">
         <field name="name">Sesións3</field>
         <field name="res_model">openacademy.sesion3</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
 </odoo>

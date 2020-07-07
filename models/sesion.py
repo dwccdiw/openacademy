@@ -33,11 +33,10 @@ class sesion(models.Model):
     # attendee_ids = fields.Many2many('res.partner',  string="Axudantes")
     # attendee_ids = fields.Many2many ('management.student', relation='your_table_name', column1='course_id',
     #                                  column2='student_id', string="Attendees")
-    axudantes_ids = fields.Many2many('res.partner', ondelete='set null',string="Axudantes" )
+    axudantes_ids = fields.Many2many('res.partner', string="Axudantes" )
     moeda_id = fields.Many2one ('res.currency')
     custo_por_hora = fields.Monetary ("Custo por hora", 'moeda_id')
 
-    @api.multi
     def button_check_duracion(self): # é necesario engadir no xml da vista no header o botón
         #self.ensure_one ()
         for rexistro in self:

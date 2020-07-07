@@ -15,7 +15,7 @@ class sesion3(models.Model):
     curso_id = fields.Many2one('openacademy.curso3', ondelete='cascade', required=True,string="Título do Curso")
     asistentes_ids = fields.Many2many('res.partner', relation='openacademy_relacion_sesion3_res_partner',
                                      column1='sesion3_id',column2='asistente_id',
-                                     ondelete='set null',string="Asistentes" )# Para definir nos a táboa relación, senón podería ser
+                                     string="Asistentes" )# Para definir nos a táboa relación, senón podería ser
     mes_date = fields.Char (compute="_cambio_data", size=15, store=True)
     enderezo = fields.Text (string="Local de xogo(Enderezo)")
     localidade = fields.Char (string="Localidade", size=40)
@@ -26,7 +26,6 @@ class sesion3(models.Model):
                                      [('name', '=', 'Pontevedra')], limit=1))
     codigo_postal = fields.Char (size=5, string="Código Postal")
 
-    @api.multi
     def button_check_duracion(self): # é necesario engadir no xml da vista no header o botón
         #self.ensure_one ()
         for rexistro in self:
